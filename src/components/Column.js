@@ -5,7 +5,10 @@ import './Column.css';
 class Column extends React.Component {
   constructor(props) {
     super(props);
-    this.sayHello = this.sayHello.bind(this);
+    this.addCard = this.addCard.bind(this);
+    this.state = {
+      cards: []
+    }
   }
 
   render(){
@@ -15,17 +18,30 @@ class Column extends React.Component {
           <span>
             Went well
           </span>
-          <button className="add-card" onClick={this.sayHello}>
+          <button className="add-card" onClick={this.addCard}>
             +
           </button>
+          <ul>
+            {this.state.cards.map((component, index) => (
+              <React.Fragment key={index}>
+                { component }
+              </React.Fragment>)
+            )}
+          </ul>
         </div>
       </div>
 
       )
   }
 
-  sayHello() {
-    alert('hello')
+  addCard() {
+    const cardsToAdd = this.state.cards;
+
+    cardsToAdd.push(<Card />)
+
+    this.setState({
+      cards: cardsToAdd
+    })
   }
 }
 
