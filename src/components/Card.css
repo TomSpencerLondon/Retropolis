@@ -17,6 +17,69 @@
     color: white;
 }
 
+textarea {
+    background-color: #fff;
+    border-width: 0;
+    box-sizing: border-box;
+    font-family: Roboto,sans-serif;
+    font-size: 14px;
+    height: 52px;
+    outline: 0;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    padding: .3em .5em 0;
+    resize: none;
+    width: 100%;
+}
+
+.new-back {
+    background-color: #e91e63;
+    box-sizing: border-box;
+    color: #fff;
+    padding-bottom: 4px;
+    position: relative;
+    z-index: 10;
+}
+
+.add-message {
+    background-color: #00c853;
+    border-bottom: 2px solid #00a946;
+    border-radius: 2px;
+    border-width: 0;
+    bottom: 14px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: Roboto,sans-serif;
+    font-size: .7em;
+    height: 20px;
+    left: 14px;
+    line-height: 2em;
+    margin-left: 0;
+    padding: 0;
+    position: absolute;
+    transition: background .2s, border .2s;
+    width: 43px;
+}
+
+.pencil {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    color: #fce4ec;
+    display: inline-block;
+    font-family: FontAwesome;
+    font-weight: 400;
+    line-height: 1;
+    text-rendering: auto;
+    cursor: pointer;
+}
+
+.message-bodylink {
+    position: absolute;
+    top: .4em;
+    right: .5em;
+}
+
 .message-body {
     box-sizing: border-box;
     padding: .5em .5em 0;
