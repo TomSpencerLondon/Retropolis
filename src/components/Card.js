@@ -1,52 +1,55 @@
 import * as React from "react";
-import './Card.css';
-import {useState} from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPencilAlt } from '@fortawesome/free-solid-svg-icons'
+import "./Card.css";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 import * as PropTypes from "prop-types";
 
-
-
 export default function Card() {
-  const [editing, setEditing] = useState(true)
+  const [editing, setEditing] = useState(true);
+  const [text, setText] = useState('');
 
-  return(
-    editing ?
-      <div className="new-back">
-        <div className="message-body">
-          <Edit onClick={() => setEditing(false)}/>
-        </div>
+  function handleChange(e){
+    setText(e.target.value);
+  }
+
+  return editing ? (
+    <div className="new-back">
+      <div className="message-body">
+        <Edit onClick={() => setEditing(false)} onChange={handleChange} text={text} />
       </div>
-      :
-      <div className="message-main">
-        <div className="message-body">
-          <Display onClick={() => setEditing(true)}/>
-        </div>
+    </div>
+  ) : (
+    <div className="message-main">
+      <div className="message-body">
+        <Display onClick={() => setEditing(true)} text={text} />
       </div>
-  )
+    </div>
+  );
 }
 
 function Display(props) {
-  return <div className="text">
-    This card is working
-    <div className="pencil message-bodylink">
-      <FontAwesomeIcon icon={faPencilAlt} onClick={props.onClick}/>
+  return (
+    <div className="text">
+      {props.text}
+      <div className="pencil message-bodylink">
+        <FontAwesomeIcon icon={faPencilAlt} onClick={props.onClick}/>
+      </div>
     </div>
-  </div>;
+  );
 }
 
-Display.propTypes = {onClick: PropTypes.func};
-
+Display.propTypes = { onClick: PropTypes.func };
 
 function Edit(props) {
-  return <>
-<textarea>
-          </textarea>
-    <button className="add-message" onClick={props.onClick}>
-      Add
-    </button>
-  </>;
+  return (
+    <>
+      <textarea onChange={props.onChange } defaultValue={props.text}></textarea>
+      <button className="add-message" onClick={props.onClick}>
+        Add
+      </button>
+    </>
+  );
 }
 
-Edit.propTypes = {onClick: PropTypes.func};
-
+Edit.propTypes = { onClick: PropTypes.func };

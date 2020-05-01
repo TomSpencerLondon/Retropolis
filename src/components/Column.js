@@ -1,48 +1,44 @@
 import * as React from "react";
-import Card from './Card';
-import './Column.css';
+import Card from "./Card";
+import "./Column.css";
 
 class Column extends React.Component {
   constructor(props) {
     super(props);
     this.addCard = this.addCard.bind(this);
     this.state = {
-      cards: []
-    }
+      cards: [],
+    };
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <div className="column">
         <div className="column-header">
-          <span>
-            Went well
-          </span>
+          <span>Went well</span>
           <button className="add-card" onClick={this.addCard}>
             +
           </button>
-
         </div>
-        < ul className="column_2">
+        <ul className="column_2">
           {this.state.cards.map((component, index) => (
             <li key={index} className="message">
-              { component }
-            </li>)
-          )}
+              {component}
+            </li>
+          ))}
         </ul>
       </div>
-
-      )
+    );
   }
 
   addCard() {
     const cardsToAdd = this.state.cards;
 
-    cardsToAdd.push(<Card />)
+    cardsToAdd.push(<Card />);
 
     this.setState({
-      cards: cardsToAdd
-    })
+      cards: cardsToAdd,
+    });
   }
 }
 
