@@ -21,14 +21,15 @@ class Column extends React.Component {
           <button className="add-card" onClick={this.addCard}>
             +
           </button>
-          <ul>
-            {this.state.cards.map((component, index) => (
-              <React.Fragment key={index}>
-                { component }
-              </React.Fragment>)
-            )}
-          </ul>
+
         </div>
+        < ul className="column_2">
+          {this.state.cards.map((component, index) => (
+            <li key={index} className="message">
+              { component }
+            </li>)
+          )}
+        </ul>
       </div>
 
       )

@@ -16,6 +16,22 @@
     position: relative;
 }
 
+.column_2 {
+    box-sizing: border-box;
+    flex: 1;
+    margin-top: 0;
+    padding-left: 0;
+}
+
+.message {
+    border-radius: 2px;
+    cursor: grab;
+    display: block;
+    height: auto;
+    margin-bottom: 15px;
+    transition: top .3s ease-in-out;
+}
+
 .add-card {
     background-color: #ddd;
     border-radius: 2px;
