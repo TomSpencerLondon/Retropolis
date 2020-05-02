@@ -44,7 +44,7 @@ Display.propTypes = { onClick: PropTypes.func };
 function Edit(props) {
   return (
     <>
-      <textarea onChange={props.onChange } defaultValue={props.text}></textarea>
+      <textarea onChange={props.onChange} defaultValue={props.text}/>
       <button className="add-message" onClick={props.onClick}>
         Add
       </button>
