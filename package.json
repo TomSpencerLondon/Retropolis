@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "prettier": "^2.0.5",
-    "react-styleguidist": "^11.0.5"
+    "react-styleguidist": "^11.0.5",
+    "cypress": "^4.5.0"
   }
 }

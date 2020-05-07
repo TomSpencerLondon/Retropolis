@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'thirsty_script_extrabold_deRg';
+    src:  url('/thirstyscriptextrabolddemo-webfont.woff2');
+}
+
+.header {
+    -webkit-tap-highlight-color: transparent;
+    align-items: center;
+    background-color: #2196f3;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    min-height: 47px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: all 450ms cubic-bezier(.23,1,.32,1) 0ms;
+    width: 100%;
+}
+
+span {
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+.logo {
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    margin-right: 10px;
+    font-family: 'thirsty_script_extrabold_deRg', serif;
+    font-size: 1.5em;
+    line-height: 1em;
+    color: white;
+    cursor: pointer;
+}
