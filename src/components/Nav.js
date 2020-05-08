@@ -3,7 +3,7 @@ import "./Nav.css";
 import Modal from "./Modal";
 import useModal from "./UseModal";
 
-export default function Nav() {
+export default function Nav({ addColumn }) {
   const { isShowing, toggle } = useModal();
 
   return (
@@ -11,18 +11,13 @@ export default function Nav() {
       <nav>
         <div className="menu board-menu">
           <span></span>
-            <button className="new-column" onClick={toggle}>
-              New column
-            </button>
+          <button className="new-column" onClick={toggle}>
+            New column
+          </button>
         </div>
       </nav>
 
-      <Modal
-        isShowing={isShowing}
-        hide={toggle}
-      />
+      <Modal isShowing={isShowing} hide={toggle} addColumn={addColumn} />
     </>
-  )
+  );
 }
-
-

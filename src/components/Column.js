@@ -16,7 +16,7 @@ class Column extends React.Component {
       <div className="column">
         <div className="column-header">
           <h2>
-            <span>Went well</span>
+            <span>{this.props.name}</span>
           </h2>
           <button className="add-card" onClick={this.addCard}>
             +

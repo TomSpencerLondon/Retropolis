@@ -1,16 +1,13 @@
 import React from 'react';
-import Column from './components/Column';
+import Board from './components/Board';
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Nav />
-
-      <Column />
-
+      <Header/>
+      <Board/>
     </div>
   );
 }
