@@ -1,0 +1,122 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    opacity: .5;
+}
+
+.modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+    display: flex;
+}
+
+.modal {
+    -webkit-tap-highlight-color: transparent;
+    animation: swal2-show .3s;
+    background-color: #fff;
+    border-radius: .3125em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    justify-content: center;
+    margin: auto;
+    max-width: 100%;
+    padding: 1.25em;
+    position: relative;
+    width: 32em;
+}
+
+.modal-header {
+    -webkit-tap-highlight-color: transparent;
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    color: #545454;
+    font-size: 1.125em;
+    font-weight: 300;
+    justify-content: center;
+    line-height: normal;
+    margin: 0;
+    overflow-wrap: break-word;
+    padding: 0;
+    z-index: 1;
+}
+
+.modal-input {
+    -webkit-tap-highlight-color: transparent;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: .1875em;
+    box-shadow: rgba(0,0,0,.06) 0 1px 1px inset;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 1.125em;
+    height: 2.625em;
+    margin: 1em auto;
+    padding: 0 .75em;
+    transition: border-color .3s, box-shadow .3s;
+    width: 100%;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-open-button {
+    -webkit-tap-highlight-color: transparent;
+    background-color: #3085d6;
+    border-left-color: #e91e63;
+    border-radius: .25em;
+    border-right-color: #e91e63;
+    border-width: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: Roboto,sans-serif;
+    font-size: 1.0625em;
+    font-weight: 500;
+    margin: 10px 0 0;
+    padding: .625em 2em;
+    transition: background .2s, border .2s;
+    width: auto;
+}
+
+.modal-close-button {
+    -webkit-tap-highlight-color: transparent;
+    background-color: #aaa;
+    border-radius: .25em;
+    border-width: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roboto,sans-serif;
+    font-size: 1.0625em;
+    font-weight: 500;
+    margin: 10px 0 0;
+    padding: .625em 2em;
+    transition: background .2s, border .2s;
+    width: auto;
+}
+

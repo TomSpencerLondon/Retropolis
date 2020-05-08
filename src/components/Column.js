@@ -15,7 +15,9 @@ class Column extends React.Component {
     return (
       <div className="column">
         <div className="column-header">
-          <span>Went well</span>
+          <h2>
+            <span>Went well</span>
+          </h2>
           <button className="add-card" onClick={this.addCard}>
             +
           </button>

@@ -32,6 +32,30 @@ textarea {
   width: 100%;
 }
 
+.messsage-body .delete-link {
+  top: auto;
+  right: 12px;
+  bottom: 12px;
+  left: auto;
+  font-size: 1em;
+}
+
+.message .back {
+  position: relative;
+  /* padding-bottom: 4px; */
+  color: white;
+}
+
+.back a {
+  color: #df3e3e;
+}
+
+.message-body .message-body-link {
+  position: absolute;
+  top: .4em;
+  right: .5em;
+}
+
 .new-back {
   background-color: #e91e63;
   box-sizing: border-box;

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'RobotoBold';
+  src:  url('/Roboto-Bold.woff');
+}
+
 .column {
   box-sizing: border-box;
   display: flex;
@@ -14,6 +19,23 @@
   cursor: grab;
   margin-top: 15px;
   position: relative;
+}
+
+.column-header h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  font-weight: normal;
+}
+
+h2 {
+  display: inline-block;
+  min-width: 50px;
+  margin-bottom: 0;
+  font-family: 'RobotoBold';
+  font-size: 1.3em;
+  line-height: 1em;
+  cursor: pointer;
 }
 
 .column_2 {

@@ -3,6 +3,7 @@ import "./Card.css";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import * as PropTypes from "prop-types";
 
 export default function Card() {
@@ -14,7 +15,7 @@ export default function Card() {
   }
 
   return editing ? (
-    <div className="new-back">
+    <div className="new-back back back_2">
       <div className="message-body">
         <Edit onClick={() => setEditing(false)} onChange={handleChange} text={text} />
       </div>
@@ -32,7 +33,7 @@ function Display(props) {
   return (
     <div className="text">
       {props.text}
-      <div className="pencil message-bodylink">
+      <div className="pencil message-body-link">
         <FontAwesomeIcon icon={faPencilAlt} onClick={props.onClick}/>
       </div>
     </div>
@@ -44,10 +45,13 @@ Display.propTypes = { onClick: PropTypes.func };
 function Edit(props) {
   return (
     <>
-      <textarea onChange={props.onChange} defaultValue={props.text}/>
+      <textarea onChange={props.onChange} defaultValue={props.text} />
       <button className="add-message" onClick={props.onClick}>
         Add
       </button>
+      <a className="delete-link message-body-link">
+        <FontAwesomeIcon icon={faTrashAlt} />
+      </a>
     </>
   );
 }
