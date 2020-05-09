@@ -23,7 +23,6 @@ textarea {
   box-sizing: border-box;
   font-family: Roboto, sans-serif;
   font-size: 14px;
-  height: 52px;
   outline: 0;
   overflow: hidden;
   overflow-wrap: break-word;
@@ -31,6 +30,7 @@ textarea {
   resize: none;
   width: 100%;
 }
+
 
 .messsage-body .delete-link {
   top: auto;
@@ -52,8 +52,8 @@ textarea {
 
 .message-body .message-body-link {
   position: absolute;
-  top: .4em;
-  right: .5em;
+  top: 1em;
+  right: 1em;
 }
 
 .new-back {
@@ -100,8 +100,8 @@ textarea {
 
 .message-bodylink {
   position: absolute;
-  top: 0.4em;
-  right: 0.5em;
+  top: 1em;
+  right: 1em;
 }
 
 .message-body {

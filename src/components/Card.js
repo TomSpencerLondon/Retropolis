@@ -1,10 +1,10 @@
 import * as React from "react";
-import "./Card.css";
 import { useState } from "react";
+import "./Card.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
-import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faPencilAlt, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import * as PropTypes from "prop-types";
+import TextareaAutosize from "react-textarea-autosize";
 
 export default function Card() {
   const [editing, setEditing] = useState(true);
@@ -49,7 +49,11 @@ Display.propTypes = { onClick: PropTypes.func };
 function Edit(props) {
   return (
     <>
-      <textarea onChange={props.onChange} defaultValue={props.text} />
+      <TextareaAutosize
+        onChange={props.onChange}
+        defaultValue={props.text}
+        style={{ minHeight: 52, paddingBottom: 31 }}
+      />
       <button className="add-message" onClick={props.onClick}>
         Add
       </button>
