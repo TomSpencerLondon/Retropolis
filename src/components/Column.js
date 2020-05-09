@@ -2,11 +2,12 @@ import * as React from "react";
 import Card from "./Card";
 import "./Column.css";
 import { useState } from "react";
+import { uuid } from "uuidv4";
 
 export default function Column({ name }) {
   const [cards, setCards] = useState([]);
 
-  const addCard = () => setCards([...cards, <Card />]);
+  const addCard = () => setCards([...cards, <Card id={uuid()} />]);
 
   //const deleteCard = (card) => {}
 
