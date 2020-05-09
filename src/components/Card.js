@@ -57,12 +57,7 @@ function Edit(props) {
       <button className="add-message" onClick={props.onClick}>
         Add
       </button>
-      <span
-        className="delete-link message-body-link"
-        onClick={() => {
-          alert("hello");
-        }}
-      >
+      <span className="delete-link message-body-link" onClick={props.onClick}>
         <FontAwesomeIcon icon={faTrashAlt} />
       </span>
     </>

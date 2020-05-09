@@ -5,11 +5,13 @@ import { useState } from "react";
 import { uuid } from "uuidv4";
 
 export default function Column({ name }) {
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState(new Map());
 
-  const addCard = () => setCards([...cards, <Card id={uuid()} />]);
-
-  //const deleteCard = (card) => {}
+  const addCard = () => {
+    const cardId = uuid();
+    const newCards = new Map(cards.set(cardId, <Card id={cardId} />));
+    setCards(newCards);
+  };
 
   return (
     <div className="column">
@@ -22,9 +24,9 @@ export default function Column({ name }) {
         </button>
       </div>
       <ul className="column_2">
-        {cards.map((card, index) => (
-          <li key={index} className="message">
-            {card}
+        {[...cards.keys()].map((k) => (
+          <li key={k} className="message">
+            {cards.get(k)}
           </li>
         ))}
       </ul>
