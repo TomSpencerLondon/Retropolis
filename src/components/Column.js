@@ -1,47 +1,32 @@
 import * as React from "react";
 import Card from "./Card";
 import "./Column.css";
+import { useState } from "react";
 
-class Column extends React.Component {
-  constructor(props) {
-    super(props);
-    this.addCard = this.addCard.bind(this);
-    this.state = {
-      cards: [],
-    };
-  }
+export default function Column({ name }) {
+  const [cards, setCards] = useState([]);
 
-  render() {
-    return (
-      <div className="column">
-        <div className="column-header">
-          <h2>
-            <span>{this.props.name}</span>
-          </h2>
-          <button className="add-card" onClick={this.addCard}>
-            +
-          </button>
-        </div>
-        <ul className="column_2">
-          {this.state.cards.map((component, index) => (
-            <li key={index} className="message">
-              {component}
-            </li>
-          ))}
-        </ul>
+  const addCard = () => setCards([...cards, <Card />]);
+
+  //const deleteCard = (card) => {}
+
+  return (
+    <div className="column">
+      <div className="column-header">
+        <h2>
+          <span>{name}</span>
+        </h2>
+        <button className="add-card" onClick={addCard}>
+          +
+        </button>
       </div>
-    );
-  }
-
-  addCard() {
-    const cardsToAdd = this.state.cards;
-
-    cardsToAdd.push(<Card />);
-
-    this.setState({
-      cards: cardsToAdd,
-    });
-  }
+      <ul className="column_2">
+        {cards.map((card, index) => (
+          <li key={index} className="message">
+            {card}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
-
-export default Column;
