@@ -8,16 +8,20 @@ import * as PropTypes from "prop-types";
 
 export default function Card() {
   const [editing, setEditing] = useState(true);
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
 
-  function handleChange(e){
+  function handleChange(e) {
     setText(e.target.value);
   }
 
   return editing ? (
     <div className="new-back back back_2">
       <div className="message-body">
-        <Edit onClick={() => setEditing(false)} onChange={handleChange} text={text} />
+        <Edit
+          onClick={() => setEditing(false)}
+          onChange={handleChange}
+          text={text}
+        />
       </div>
     </div>
   ) : (
@@ -34,7 +38,7 @@ function Display(props) {
     <div className="text">
       {props.text}
       <div className="pencil message-body-link">
-        <FontAwesomeIcon icon={faPencilAlt} onClick={props.onClick}/>
+        <FontAwesomeIcon icon={faPencilAlt} onClick={props.onClick} />
       </div>
     </div>
   );
@@ -49,9 +53,14 @@ function Edit(props) {
       <button className="add-message" onClick={props.onClick}>
         Add
       </button>
-      <a className="delete-link message-body-link">
+      <span
+        className="delete-link message-body-link"
+        onClick={() => {
+          alert("hello");
+        }}
+      >
         <FontAwesomeIcon icon={faTrashAlt} />
-      </a>
+      </span>
     </>
   );
 }

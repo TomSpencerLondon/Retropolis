@@ -1,0 +1,9 @@
+.capture {
+    background-color: #f3f3f3;
+    box-sizing: border-box;
+    display: flex;
+    min-height: calc(100vh - 100px);
+    overflow-x: auto;
+    padding-bottom: 35px;
+    width: 100%;
+}

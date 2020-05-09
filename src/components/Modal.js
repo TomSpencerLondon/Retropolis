@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "./Modal.css";
 
-const Modal = ({ isShowing, hide, addColumn }) =>
-  isShowing
+export default function Modal({ isShowing, hide, addColumn }) {
+  const [newColumnName, setNewColumnName] = useState("");
+
+  function handleChange(e) {
+    setNewColumnName(e.target.value);
+  }
+
+  return isShowing
     ? ReactDOM.createPortal(
         <React.Fragment>
           <div className="modal-overlay" />
@@ -20,6 +26,7 @@ const Modal = ({ isShowing, hide, addColumn }) =>
                 <input
                   className="modal-input"
                   placeholder="enter column name"
+                  onChange={handleChange}
                 />
               </div>
               <div className="modal-actions">
@@ -29,7 +36,7 @@ const Modal = ({ isShowing, hide, addColumn }) =>
                   data-dismiss="modal"
                   aria-label="Save"
                   onClick={() => {
-                    addColumn("A New Column");
+                    addColumn(newColumnName);
                     hide();
                   }}
                 >
@@ -52,5 +59,4 @@ const Modal = ({ isShowing, hide, addColumn }) =>
         document.body
       )
     : null;
-
-export default Modal;
+}
