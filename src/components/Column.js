@@ -7,11 +7,7 @@ import { uuid } from "uuidv4";
 export default function Column({ name }) {
   const [cards, setCards] = useState(new Map());
 
-  const addCard = () => {
-    const cardId = uuid();
-    const newCards = new Map(cards.set(cardId, <Card id={cardId} />));
-    setCards(newCards);
-  };
+  const addCard = () => setCards([...cards, <Card id={uuid()} />]);
 
   return (
     <div className="column">
