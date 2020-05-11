@@ -7,7 +7,8 @@ import { uuid } from "uuidv4";
 export default function Column({ name }) {
   const [cards, setCards] = useState([]);
 
-  const addCard = () => setCards([...cards, <Card id={uuid()} />]);
+  const addCard = () => setCards([...cards, { id: uuid(), text: "" }]);
+  const deleteCard = (id) => setCards(cards.filter((card) => card.id !== id));
 
   return (
     <div className="column">
@@ -22,7 +23,7 @@ export default function Column({ name }) {
       <ul className="column_2">
         {cards.map((card, index) => (
           <li key={index} className="message">
-            {card}
+            <Card id={card.id} deleteCard={deleteCard} />
           </li>
         ))}
       </ul>

@@ -6,7 +6,7 @@ import { faPencilAlt, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import * as PropTypes from "prop-types";
 import TextareaAutosize from "react-textarea-autosize";
 
-export default function Card() {
+export default function Card({ id, deleteCard }) {
   const [editing, setEditing] = useState(true);
   const [text, setText] = useState("");
 
@@ -21,6 +21,8 @@ export default function Card() {
           onClick={() => setEditing(false)}
           onChange={handleChange}
           text={text}
+          id={id}
+          deleteCard={deleteCard}
         />
       </div>
     </div>
@@ -57,7 +59,12 @@ function Edit(props) {
       <button className="add-message" onClick={props.onClick}>
         Add
       </button>
-      <span className="delete-link message-body-link" onClick={props.onClick}>
+      <span
+        className="delete-link message-body-link"
+        onClick={() => {
+          props.deleteCard(props.id);
+        }}
+      >
         <FontAwesomeIcon icon={faTrashAlt} />
       </span>
     </>
