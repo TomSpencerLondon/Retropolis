@@ -9,8 +9,6 @@ export default function Column({ name }) {
 
   const addCard = () => setCards([...cards, <Card id={uuid()} />]);
 
-  //const deleteCard = (card) => {}
-
   return (
     <div className="column">
       <div className="column-header">
