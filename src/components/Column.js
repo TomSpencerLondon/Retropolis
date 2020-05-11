@@ -5,7 +5,7 @@ import { useState } from "react";
 import { uuid } from "uuidv4";
 
 export default function Column({ name }) {
-  const [cards, setCards] = useState(new Map());
+  const [cards, setCards] = useState([]);
 
   const addCard = () => setCards([...cards, <Card id={uuid()} />]);
 
@@ -20,9 +20,9 @@ export default function Column({ name }) {
         </button>
       </div>
       <ul className="column_2">
-        {[...cards.keys()].map((k) => (
-          <li key={k} className="message">
-            {cards.get(k)}
+        {cards.map((card, index) => (
+          <li key={index} className="message">
+            {card}
           </li>
         ))}
       </ul>
