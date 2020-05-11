@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./Nav.css";
-import Modal from "./Modal";
+import Modal from "./Column/Modal";
 import useModal from "./UseModal";
 
 export default function Nav({ addColumn }) {

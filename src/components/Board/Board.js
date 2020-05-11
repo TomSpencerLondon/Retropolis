@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
-import Column from "./Column";
-import Nav from "./Nav";
+import Column from "../Column/Column";
+import Nav from "../Nav";
 import "./Board.css";
 import { uuid } from "uuidv4";
 
