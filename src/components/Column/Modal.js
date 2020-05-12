@@ -44,6 +44,7 @@ AddColumnDialog.propTypes = {
   onClick: PropTypes.func,
   onClick1: PropTypes.any,
 };
+
 export default function Modal({ isShowing, hide, addColumn }) {
   const [newColumnName, setNewColumnName] = useState("");
 

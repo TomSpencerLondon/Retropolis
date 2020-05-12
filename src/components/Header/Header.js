@@ -6,12 +6,9 @@ export default function Card() {
     <>
       <div className="header">
         <div className="logo">
-          <span>
-            Fun Retro
-          </span>
+          <span>Retropolis</span>
         </div>
       </div>
     </>
-  )
-
+  );
 }
