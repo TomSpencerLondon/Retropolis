@@ -16,7 +16,6 @@ export default function Nav({ addColumn }) {
           </button>
         </div>
       </nav>
-
       <Modal isShowing={isShowing} hide={toggle} addColumn={addColumn} />
     </>
   );

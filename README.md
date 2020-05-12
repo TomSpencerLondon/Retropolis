@@ -8,3 +8,4 @@ Practice React App
 * Drag and Drop columns
 * Merge cards
 * Comments
+* Circle CI
